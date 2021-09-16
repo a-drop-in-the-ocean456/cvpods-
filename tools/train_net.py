@@ -24,9 +24,12 @@ from cvpods.engine import RUNNERS, default_argument_parser, default_setup, hooks
 from cvpods.evaluation import build_evaluator
 from cvpods.modeling import GeneralizedRCNNWithTTA
 
-from config import config
-from net import build_model
+# from config import config
+# from net import build_model
 
+#此处进行了修改，替换上面的两行，导入retinanet的配置文件和模型的建立
+from playground.detection.coco.retinanet.retinanet_res50_fpn_coco_multiscale_1x.config import config
+from playground.detection.coco.retinanet.retinanet_res50_fpn_coco_multiscale_1x.net import build_model
 
 def runner_decrator(cls):
     """
